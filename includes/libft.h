@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <string.h>
 
+int		get_next_line(int const fd, char **line);
+
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 void	ft_memdel(void **ap);

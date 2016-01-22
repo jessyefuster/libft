@@ -67,7 +67,8 @@ SRCS = ft_memset.c \
 		ft_strmapi.c \
 		ft_strsub.c \
 		ft_strtrim.c \
-		ft_strsplit.c
+		ft_strsplit.c \
+		get_next_line.c
 		
 
 OBJ = $(SRCS:%.c=%.o)
@@ -75,32 +76,15 @@ OBJ = $(SRCS:%.c=%.o)
 all: $(NAME)
 
 $(NAME):
-	@echo "\033[0;36m          _              _          _               _        _        \033[0m"
-	@echo "\033[0;36m         _\ \           /\ \       / /\            /\ \     /\ \      \033[0m"
-	@echo "\033[0;36m        /\__ \          \ \ \     / /  \          /  \ \    \_\ \     \033[0m"
-	@echo "\033[0;36m       / /_ \_\         /\ \_\   / / /\ \        / /\ \ \   /\__ \    \033[0m"
-	@echo "\033[0;36m      / / /\/_/        / /\/_/  / / /\ \ \      / / /\ \_\ / /_ \ \   \033[0m"
-	@echo "\033[0;36m     / / /            / / /    / / /\ \_\ \    / /_/_ \/_// / /\ \ \  \033[0m"
-	@echo "\033[0;36m    / / /            / / /    / / /\ \ \___\  / /____/\  / / /  \/_/  \033[0m"
-	@echo "\033[0;36m   / / / ____       / / /    / / /  \ \ \__/ / /\____\/ / / /         \033[0m"
-	@echo "\033[0;36m  / /_/_/ ___/\ ___/ / /__  / / /____\_\ \  / / /      / / /          \033[0m"
-	@echo "\033[0;36m /_______/\__\//\__\/_/___\/ / /__________\/ / /      /_/ /           \033[0m"
-	@echo "\033[0;36m \_______\/    \/_________/\/_____________/\/_/       \_\/            \033[0m"
-	@echo "\033[0;36m                                                                      \033[0m"
-	@echo "\033[1;30mCompilation des sources...\033[0m"
 	@gcc $(FLAGS) -c $(SRCS)
-	@echo  "\033[1;30mCreation de la librairie...\033[0m"
 	@ar -rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
-	@echo  "\033[0;36mLibrairie cree avec succes\033[0m"
 
 clean:
 	@rm -f $(OBJ)
-	@echo "\033[0;36mFichiers objets supprimes\033[0m"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "\033[0;36mLibrairie supprimee\033[0m"
 
 re: fclean all
 
