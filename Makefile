@@ -24,9 +24,12 @@ SRCS = ft_memset.c \
 		ft_bzero.c \
 		ft_putchar.c \
 		ft_putstr.c \
+		ft_putnstr.c \
 		ft_putendl.c \
 		ft_putchar_fd.c \
+		ft_putchar_unicode.c \
 		ft_putstr_fd.c \
+		ft_putstr_unicode.c \
 		ft_putendl_fd.c\
 		ft_strcpy.c \
 		ft_strncpy.c \
@@ -37,6 +40,7 @@ SRCS = ft_memset.c \
 		ft_strncmp.c \
 		ft_strdup.c \
 		ft_strlen.c \
+		ft_strlen_unicode.c \
 		ft_strchr.c \
 		ft_strrchr.c \
 		ft_strstr.c \
@@ -50,10 +54,15 @@ SRCS = ft_memset.c \
 		ft_isupper.c \
 		ft_tolower.c \
 		ft_toupper.c \
+		ft_str_toupper.c \
 		ft_atoi.c \
 		ft_itoa.c \
+		ft_ltoa.c \
+		ft_utob.c \
 		ft_putnbr.c \
 		ft_putnbr_fd.c \
+		ft_putnbr_abs.c \
+		ft_putnbr_lint_abs.c \
 		ft_strclr.c \
 		ft_strequ.c \
 		ft_strnequ.c \
@@ -68,30 +77,25 @@ SRCS = ft_memset.c \
 		ft_strsub.c \
 		ft_strtrim.c \
 		ft_strsplit.c \
+		ft_numlen.c \
 		get_next_line.c
-		
+
 
 OBJ = $(SRCS:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME):
-	@gcc $(FLAGS) -c $(SRCS)
-	@ar -rc $(NAME) $(OBJ)
-	@ranlib $(NAME)
+$(NAME): $(OBJ)
+	ar -rc $(NAME) $(OBJ)
+	ranlib $(NAME)
+
+%.o: %.c
+	gcc -o $@ -c $< $(FLAGS)
 
 clean:
-	@rm -f $(OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
-
-norme:
-	@norminette $(SRCS)
-
-push:
-	git add -A
-	git commit -m "modif"
-	git push
