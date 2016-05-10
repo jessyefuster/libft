@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_usage.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfuster <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 05:46:28 by jfuster           #+#    #+#             */
-/*   Updated: 2015/11/27 05:46:30 by jfuster          ###   ########.fr       */
+/*   Created: 2015/11/26 13:32:54 by jfuster           #+#    #+#             */
+/*   Updated: 2015/11/26 14:12:33 by jfuster          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-void	ft_strclr(char *s)
+void	ft_usage(char *str)
 {
-	size_t	len;
-
-	len = ft_strlen(s);
-	ft_bzero((void *)s, len);
+	ft_putendl_fd(str, 2);
+	exit (0);
 }

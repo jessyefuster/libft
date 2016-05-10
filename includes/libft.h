@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <limits.h>
 
 int		get_next_line(int const fd, char **line);
 
@@ -75,6 +76,7 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n);
 **      PRINTING FUNCTIONS
 */
 
+void	ft_usage(char *str);
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putchar_unicode(wchar_t c);

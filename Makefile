@@ -78,6 +78,7 @@ SRCS = ft_memset.c \
 		ft_strtrim.c \
 		ft_strsplit.c \
 		ft_numlen.c \
+		ft_usage.c \
 		get_next_line.c
 
 

@@ -38,9 +38,9 @@ char		*ft_itoa(int n)
 {
 	int		len;
 	int		sign;
-	char	*str;
+	char		*str;
 
-	if (n == -2147483648)
+	if (n == INT_MIN)
 		return (ft_strdup("-2147483648"));
 	sign = ft_isnegative(n);
 	if (n < 0)
